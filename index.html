@@ -3,95 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akash Kandari — Full-Stack Developer</title>
+  <title>Akash Kandari | Full-Stack Developer</title>
   <meta name="description" content="Akash Kandari — full-stack developer. Sole developer of Dragon Pit, the asset platform and Blender add-on used daily by ~100 animators at a 3D animation studio.">
   <meta name="author" content="Akash Kandari">
-  <meta name="theme-color" content="#0a0a12">
-  <meta property="og:title" content="Akash Kandari — Full-Stack Developer">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta property="og:title" content="Akash Kandari | Full-Stack Developer">
   <meta property="og:description" content="Next.js, TypeScript, Postgres, Python. Builds and runs software in production.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/shots/catalog.webp">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a12'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236c63ff'%3EAK%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a0f'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-weight='700' font-size='28' fill='%236c63ff'%3EAK%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="backdrop" aria-hidden="true">
-    <div class="blob blob-a"></div>
-    <div class="blob blob-b"></div>
-    <div class="grid-lines"></div>
+<body class="is-loading">
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-rings"><span></span><span></span><span></span></div>
+    <span class="loader-text">Loading portfolio…</span>
   </div>
 
-  <header class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#top" class="brand"><span class="accent">&lt;</span>Akash<span class="accent"> /&gt;</span></a>
-      <nav>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#terminal">Terminal</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="bg-mesh" aria-hidden="true"></div>
+  <div class="bg-particles" id="particles" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="bracket">&lt;</span>Akash<span class="bracket"> /&gt;</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#terminal" class="nav-link">Terminal</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
     </div>
-  </header>
+  </nav>
 
-  <main id="top">
+  <main>
     <!-- Hero -->
-    <section class="hero">
-      <div class="hero-text">
-        <p class="pill reveal"><span class="pulse"></span>Open to full-time roles</p>
-        <h1 class="reveal">Hi, I'm <span class="grad">Akash Kandari</span></h1>
-        <p class="typed reveal" aria-label="Full-stack developer"><span id="typed"></span><span class="caret">_</span></p>
-        <p class="lead reveal">
-          I build and run software in production. Right now I'm the sole developer of
-          <strong>Dragon Pit</strong>, the asset platform and Blender add-on that about
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-badge fade-up"><span class="badge-dot"></span>Open to Opportunities</div>
+        <h1 class="hero-title fade-up d1">Hi, I'm <span class="gradient-text">Akash</span></h1>
+        <p class="hero-subtitle fade-up d2"><span id="typedText"></span><span class="cursor">|</span></p>
+        <p class="hero-description fade-up d3">
+          Full-stack developer who builds and runs software in production. Sole developer of
+          <strong>Dragon Pit</strong> — the asset platform and Blender add-on about
           <strong>100 animators</strong> at a 3D animation studio use every day.
         </p>
-        <div class="cta reveal">
-          <a class="btn btn-primary" href="#projects">See the work
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <div class="hero-cta fade-up d4">
+          <a href="assets/AkashKandari_Resume.pdf" class="btn btn-cv" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/></svg>
+            <span>Download CV</span>
           </a>
-          <a class="btn btn-ghost" href="assets/AkashKandari_Resume.pdf" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>
-            Resume
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
+          <a href="#contact" class="btn btn-outline"><span>Get in Touch</span></a>
         </div>
-        <div class="socials reveal">
-          <a href="https://github.com/Akashkandari7" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        <div class="hero-socials fade-up d5">
+          <a href="https://github.com/Akashkandari7" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
           </a>
-          <a href="https://linkedin.com/in/akashkandari7" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+          <a href="https://linkedin.com/in/akashkandari7" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
           </a>
-          <a href="mailto:akashkandari7@gmail.com" aria-label="Email">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+          <a href="mailto:akashkandari7@gmail.com" class="social-link" aria-label="Email">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
           </a>
         </div>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="portrait">
-          <!-- Drop your photo at assets/photo.jpg; until then the initials show. -->
-          <img src="assets/photo.jpg" alt="Akash Kandari" onerror="this.remove()">
-          <span class="initials" aria-hidden="true">AK</span>
+      <div class="hero-visual fade-up d3" id="heroVisual">
+        <div class="photo-wrap">
+          <div class="photo-ring">
+            <div class="photo-glow"></div>
+            <img src="assets/photo.webp" alt="Akash Kandari" class="photo" width="542" height="720">
+            <span class="photo-status"><span class="status-pulse"></span></span>
+          </div>
         </div>
-        <div class="window code-card">
-          <div class="window-bar"><i></i><i></i><i></i><span>akash.ts</span></div>
-<pre><code><span class="k">export const</span> <span class="v">akash</span> = {
-  <span class="p">role</span>: <span class="s">"Full-Stack Developer"</span>,
-  <span class="p">shipping</span>: <span class="s">"Dragon Pit"</span>,
-  <span class="p">users</span>: <span class="n">100</span>, <span class="c">// animators, daily</span>
-  <span class="p">stack</span>: [<span class="s">"Next.js"</span>, <span class="s">"TypeScript"</span>,
-          <span class="s">"Postgres"</span>, <span class="s">"Python"</span>],
-  <span class="p">graduating</span>: <span class="n">2027</span>,
+        <div class="code-window" id="codeWindow">
+          <div class="window-header">
+            <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="window-title">akash.ts</span>
+          </div>
+<pre class="code-body"><code><span class="c-kw">const</span> <span class="c-var">akash</span> = {
+  <span class="c-prop">role</span>: <span class="c-str">"Full-Stack Developer"</span>,
+  <span class="c-prop">building</span>: <span class="c-str">"Dragon Pit"</span>,
+  <span class="c-prop">users</span>: <span class="c-num">100</span>, <span class="c-com">// animators, daily</span>
+  <span class="c-prop">stack</span>: [
+    <span class="c-str">"Next.js"</span>, <span class="c-str">"TypeScript"</span>,
+    <span class="c-str">"Postgres"</span>, <span class="c-str">"Python"</span>
+  ],
+  <span class="c-prop">status</span>: <span class="c-str">"Shipping 🚀"</span>
 };</code></pre>
         </div>
       </div>
@@ -99,270 +111,436 @@
 
     <!-- About -->
     <section class="section" id="about">
-      <header class="section-head reveal">
-        <span class="tag">// who am i</span>
-        <h2>About <span class="grad">me</span></h2>
-      </header>
-      <div class="about-grid">
-        <div class="about-copy reveal">
-          <p>
-            I'm a final-year Computer Science student who likes owning a feature end to end:
-            the schema, the API, the interface, the deployment, and everything that breaks afterwards.
-          </p>
-          <p>
-            Since early 2026 I've been building <strong>Dragon Pit</strong> for The Future Animations,
-            a 3D animation studio. It started as a place to find models and grew into the studio's whole asset
-            workflow: a Next.js site, a Blender add-on, an AI feature that reads a script and pulls the assets it
-            needs, and the pipeline scripts that keep 560&nbsp;GB of files honest.
-          </p>
-          <p>
-            Before that I built smaller things for myself and for class: a question-paper generator for teachers,
-            a lead-finding agent for local businesses, and an e-commerce site.
-          </p>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// who am i</span>
+          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
         </div>
-        <div class="stats reveal">
-          <div class="stat"><b>~100</b><span>animators use it daily</span></div>
-          <div class="stat"><b>600+</b><span>assets in the catalog</span></div>
-          <div class="stat"><b>560 GB</b><span>on Cloudflare R2</span></div>
-          <div class="stat"><b>1</b><span>developer (me)</span></div>
+        <div class="about-grid">
+          <div class="about-content reveal from-left">
+            <p class="about-text">
+              I'm a final-year <strong>Computer Science</strong> student who likes owning a feature
+              <strong>end to end</strong> — the schema, the API, the interface, the deployment, and everything
+              that breaks afterwards.
+            </p>
+            <p class="about-text">
+              Since early 2026 I've been building <strong>Dragon Pit</strong> for a 3D animation studio. It started
+              as a place to find models and grew into the studio's whole asset workflow: a Next.js site, a
+              <strong>Blender add-on</strong>, an <strong>AI script breakdown</strong> on Gemini, and the pipeline
+              scripts that keep 560&nbsp;GB of files honest.
+            </p>
+            <div class="about-stats stagger">
+              <div class="stat-card"><span class="stat-icon">🎬</span><span class="stat-body"><b>~100</b><span>animators, daily</span></span></div>
+              <div class="stat-card"><span class="stat-icon">📦</span><span class="stat-body"><b>600+</b><span>assets in the catalog</span></span></div>
+              <div class="stat-card"><span class="stat-icon">☁️</span><span class="stat-body"><b>560 GB</b><span>on Cloudflare R2</span></span></div>
+              <div class="stat-card"><span class="stat-icon">🧑‍💻</span><span class="stat-body"><b>Solo</b><span>sole developer</span></span></div>
+            </div>
+          </div>
+          <div class="mini-terminal reveal from-right" id="miniTerminal">
+            <div class="window-header">
+              <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+              <span class="window-title">terminal</span>
+            </div>
+            <div class="mini-terminal-body">
+              <div class="mt-line"><span class="mt-prompt">$</span> <span class="mt-cmd">whoami</span></div>
+              <div class="mt-out">Akash Kandari — Full-Stack Developer, final-year CSE</div>
+              <div class="mt-line"><span class="mt-prompt">$</span> <span class="mt-cmd">cat now.txt</span></div>
+              <div class="mt-out">Building Dragon Pit: Next.js + Postgres + a Blender add-on</div>
+              <div class="mt-line"><span class="mt-prompt">$</span> <span class="mt-cmd">cat stack.txt</span></div>
+              <div class="mt-out">TypeScript, Python, PostgreSQL, Cloudflare R2, Gemini API</div>
+              <div class="mt-line"><span class="mt-prompt">$</span> <span class="mt-cmd">echo $GOAL</span></div>
+              <div class="mt-out">Ship software people use every day 🎯</div>
+              <div class="mt-line"><span class="mt-prompt">$</span> <span class="mt-cmd blink">_</span></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Education -->
     <section class="section" id="education">
-      <header class="section-head reveal">
-        <span class="tag">// where i studied</span>
-        <h2>My <span class="grad">education</span></h2>
-      </header>
-      <ol class="timeline">
-        <li class="reveal">
-          <span class="when">2023 – 2027 (expected)</span>
-          <h3>B.Tech, Computer Science and Engineering</h3>
-          <p>K.R. Mangalam University, Gurugram</p>
-          <span class="chip chip-live">Final year</span>
-        </li>
-        <li class="reveal">
-          <span class="when">Class XII</span>
-          <h3>Senior Secondary — PCM</h3>
-          <p>D.A.V. Public School, Kotdwara, Uttarakhand</p>
-        </li>
-        <li class="reveal">
-          <span class="when">Class X</span>
-          <h3>Secondary</h3>
-          <p>D.A.V. Public School, Kotdwara, Uttarakhand</p>
-        </li>
-      </ol>
-      <div class="certs reveal">
-        <span class="certs-label">Certifications</span>
-        <span class="chip">Microsoft Azure Data Fundamentals</span>
-        <span class="chip">Deloitte Data Analytics Job Simulation (Forage)</span>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// where i studied</span>
+          <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-line"></div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><span></span></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <span class="timeline-date">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  2023 – 2027
+                </span>
+                <span class="timeline-badge">Currently Pursuing</span>
+              </div>
+              <h3 class="timeline-title">Bachelor of Technology</h3>
+              <p class="timeline-subtitle">Computer Science and Engineering</p>
+              <div class="timeline-place">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg>
+                K.R. Mangalam University, Gurugram
+              </div>
+              <div class="timeline-foot"><span class="foot-label">Expected</span><span class="foot-value">June 2027</span></div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><span></span></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <span class="timeline-date">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                  Intermediate (12th)
+                </span>
+              </div>
+              <h3 class="timeline-title">Senior Secondary (Class XII)</h3>
+              <p class="timeline-subtitle">PCM (Physics, Chemistry, Mathematics)</p>
+              <div class="timeline-place">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg>
+                D.A.V. Public School, Kotdwara, Uttarakhand
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-dot"><span></span></div>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <span class="timeline-date">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-3 6 3-1.5L15 21l-3-6"/><circle cx="12" cy="9" r="6"/></svg>
+                  Certifications
+                </span>
+              </div>
+              <h3 class="timeline-title">Certifications</h3>
+              <ul class="cert-list">
+                <li>Microsoft Azure Data Fundamentals</li>
+                <li>Deloitte Data Analytics Job Simulation (Forage)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Skills -->
     <section class="section" id="skills">
-      <header class="section-head reveal">
-        <span class="tag">// what i use</span>
-        <h2>Tech <span class="grad">stack</span></h2>
-      </header>
-      <div class="skills-grid">
-        <div class="skill-card reveal">
-          <h3>Languages</h3>
-          <ul><li>TypeScript</li><li>JavaScript</li><li>Python</li><li>Java</li><li>SQL</li><li>HTML</li><li>CSS</li></ul>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// what i know</span>
+          <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
         </div>
-        <div class="skill-card reveal">
-          <h3>Frameworks</h3>
-          <ul><li>Next.js (App Router)</li><li>React</li><li>Node.js</li><li>Flask</li><li>Tailwind CSS</li><li>Prisma</li></ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Data &amp; cloud</h3>
-          <ul><li>PostgreSQL</li><li>Supabase</li><li>MongoDB</li><li>Cloudflare R2 / S3 APIs</li><li>Vercel</li></ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>AI &amp; automation</h3>
-          <ul><li>Google Gemini API</li><li>Structured-output prompting</li><li>Blender Python (bpy)</li><li>Playwright</li><li>pandas</li></ul>
-        </div>
-        <div class="skill-card reveal">
-          <h3>Practice</h3>
-          <ul><li>Git &amp; GitHub</li><li>REST APIs</li><li>JWT &amp; OAuth</li><li>Headless testing</li><li>Row-level security</li></ul>
+        <div class="skills-grid">
+          <div class="skill-category reveal">
+            <h3 class="skill-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
+              Languages
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-typescript-plain"></i>TypeScript</span>
+              <span class="skill-tag"><i class="devicon-javascript-plain"></i>JavaScript</span>
+              <span class="skill-tag"><i class="devicon-python-plain"></i>Python</span>
+              <span class="skill-tag"><i class="devicon-java-plain"></i>Java</span>
+              <span class="skill-tag"><i class="devicon-azuresqldatabase-plain"></i>SQL</span>
+              <span class="skill-tag"><i class="devicon-html5-plain"></i>HTML</span>
+              <span class="skill-tag"><i class="devicon-css3-plain"></i>CSS</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="skill-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              Frameworks
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-nextjs-plain"></i>Next.js</span>
+              <span class="skill-tag"><i class="devicon-react-original"></i>React</span>
+              <span class="skill-tag"><i class="devicon-nodejs-plain"></i>Node.js</span>
+              <span class="skill-tag"><i class="devicon-flask-original"></i>Flask</span>
+              <span class="skill-tag"><i class="devicon-tailwindcss-original"></i>Tailwind CSS</span>
+              <span class="skill-tag"><i class="devicon-prisma-original"></i>Prisma</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="skill-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+              Data &amp; Cloud
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+              <span class="skill-tag"><i class="devicon-supabase-plain"></i>Supabase</span>
+              <span class="skill-tag"><i class="devicon-mongodb-plain"></i>MongoDB</span>
+              <span class="skill-tag"><i class="devicon-cloudflare-plain"></i>Cloudflare R2</span>
+              <span class="skill-tag"><i class="devicon-vercel-original"></i>Vercel</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="skill-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 17l.8 2.2L22 20l-2.2.8L19 23l-.8-2.2L16 20l2.2-.8z"/></svg>
+              AI &amp; Automation
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-google-plain"></i>Gemini API</span>
+              <span class="skill-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H6a2 2 0 0 0-2 2v4l-2 3 2 3v4a2 2 0 0 0 2 2h2M16 3h2a2 2 0 0 1 2 2v4l2 3-2 3v4a2 2 0 0 1-2 2h-2"/></svg>Structured output</span>
+              <span class="skill-tag"><i class="devicon-blender-original"></i>Blender Python</span>
+              <span class="skill-tag"><i class="devicon-playwright-plain"></i>Playwright</span>
+              <span class="skill-tag"><i class="devicon-pandas-plain"></i>pandas</span>
+            </div>
+          </div>
+          <div class="skill-category reveal">
+            <h3 class="skill-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
+              Practice
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag"><i class="devicon-git-plain"></i>Git &amp; GitHub</span>
+              <span class="skill-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 20V9"/></svg>REST APIs</span>
+              <span class="skill-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>JWT &amp; OAuth</span>
+              <span class="skill-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Headless testing</span>
+              <span class="skill-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Row-level security</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Projects -->
     <section class="section" id="projects">
-      <header class="section-head reveal">
-        <span class="tag">// what i've built</span>
-        <h2>Featured <span class="grad">work</span></h2>
-      </header>
-
-      <article class="case reveal" id="dragon-pit">
-        <div class="case-head">
-          <div>
-            <span class="eyebrow">Case study · 2026 – present · contract, sole developer</span>
-            <h3>Dragon Pit — asset platform &amp; Blender add-on</h3>
-            <p class="case-sub">For The Future Animations, a 3D animation studio. Internal tool, not public.</p>
-          </div>
-          <ul class="case-metrics">
-            <li><b>~100</b> daily users</li>
-            <li><b>600+</b> assets</li>
-            <li><b>560 GB</b> on R2</li>
-          </ul>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// what i've built</span>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
         </div>
 
-        <div class="case-body">
-          <div class="case-col">
-            <h4>The problem</h4>
-            <p>
-              The studio had hundreds of bought and in-house 3D models spread across drives and store accounts.
-              Animators couldn't easily see what existed, and every new script meant someone reading it line by line
-              to work out which characters, sets and props were needed and whether the studio already owned them.
+        <!-- Dragon Pit case study -->
+        <article class="project-card case-study reveal" id="dragon-pit">
+          <div class="project-card-inner">
+            <div class="project-header">
+              <div class="project-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg>
+              </div>
+              <span class="case-flag">Case study · Internal studio tool</span>
+            </div>
+            <h3 class="project-title">Dragon Pit — Asset Platform &amp; Blender Add-on</h3>
+            <p class="project-description">
+              Contract work as the sole developer for The Future Animations, a 3D animation studio. The studio had
+              hundreds of bought and in-house models spread across drives and store accounts, and every new script
+              meant someone reading it line by line to work out which characters, sets and props it needed. Dragon Pit
+              puts the whole library in one place and reads the script for you.
             </p>
-            <h4>What I built</h4>
-            <ul class="ticks">
-              <li><strong>The library site</strong> — Next.js (App Router) and TypeScript on Vercel, Prisma with PostgreSQL on Supabase, files on Cloudflare R2.</li>
-              <li><strong>AI script breakdown</strong> — a two-stage Gemini pipeline: read the script and list what it needs, then cast each item against the catalog. Structured JSON output, per-script caching, model fallbacks, quota handling, and deterministic rules on top of the model's answers.</li>
-              <li><strong>The Blender add-on</strong> (Python, bpy) — browse the catalog, one-click import, script matching, animation retargeting onto Character Creator, Rigify and Mixamo rigs, and self-update with a kill switch for old versions.</li>
-              <li><strong>Access &amp; admin</strong> — role-based access with daily download limits, usage graphs, access requests, per-user download history, and a shopping list of things scripts asked for that the library didn't have.</li>
-            </ul>
-          </div>
-          <div class="case-col">
-            <h4>Interesting bits</h4>
-            <ul class="ticks">
-              <li>The offline matcher exists twice — TypeScript on the site, Python in the add-on — with an automated parity check so Blender and the browser can never disagree about the same script.</li>
-              <li>Read the indexes of 600 zip files over HTTP range requests instead of downloading terabytes, to measure exactly what each asset contains.</li>
-              <li>Headless Blender jobs pack textures into single <code>.blend</code> files and render previews; audits catch a missing texture before an animator does.</li>
-              <li>Closed a Supabase security alert by turning on row-level security on every table, verified end to end with no downtime.</li>
-            </ul>
-            <div class="tech">
-              <span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>PostgreSQL</span><span>Supabase</span><span>Cloudflare R2</span><span>Gemini API</span><span>Python</span><span>bpy</span><span>Vercel</span>
+
+            <div class="case-metrics">
+              <div><b>~100</b><span>animators, daily</span></div>
+              <div><b>600+</b><span>assets</span></div>
+              <div><b>560 GB</b><span>on Cloudflare R2</span></div>
+              <div><b>2</b><span>clients: web + Blender</span></div>
+            </div>
+
+            <div class="case-grid">
+              <div>
+                <h4 class="case-h">What I built</h4>
+                <ul class="case-list">
+                  <li><strong>The library site</strong> — Next.js (App Router) and TypeScript on Vercel, Prisma with PostgreSQL on Supabase, files on Cloudflare R2.</li>
+                  <li><strong>AI script breakdown</strong> — a two-stage Gemini pipeline: read the script and list what it needs, then cast each item against the catalog. Structured JSON, per-script caching, model fallbacks and quota handling, with deterministic rules on top.</li>
+                  <li><strong>Blender add-on</strong> (Python, bpy) — browse, one-click import, script matching, animation retargeting onto Character Creator, Rigify and Mixamo rigs, and self-update with a kill switch for old versions.</li>
+                  <li><strong>Access &amp; admin</strong> — roles with daily download limits, usage graphs, access requests, per-user download history, and a shopping list of what scripts asked for but the library didn't have.</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="case-h">Interesting bits</h4>
+                <ul class="case-list">
+                  <li>The offline matcher exists twice — TypeScript on the site, Python in the add-on — with an automated parity check so Blender and the browser never disagree about the same script.</li>
+                  <li>Read the indexes of 600 zip files over HTTP range requests instead of downloading terabytes, to measure exactly what each asset contains.</li>
+                  <li>Headless Blender jobs pack textures into single <code>.blend</code> files and render previews; audits catch a missing texture before an animator does.</li>
+                  <li>Closed a Supabase security alert by turning on row-level security on every table, verified end to end with no downtime.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gallery">
+              <figure>
+                <button class="shot" data-full="assets/shots/catalog.webp" aria-label="Enlarge screenshot: catalog">
+                  <img src="assets/shots/catalog.webp" alt="Dragon Pit catalog: a grid of 3D character models with category filters" loading="lazy" width="1600" height="1000">
+                </button>
+                <figcaption><b>Catalog</b> — filter by registry, rig status, file type and source.</figcaption>
+              </figure>
+              <figure>
+                <button class="shot" data-full="assets/shots/script-matching.webp" aria-label="Enlarge screenshot: script matching">
+                  <img src="assets/shots/script-matching.webp" alt="Match a Script page with a text box for pasting a script" loading="lazy" width="1600" height="1000">
+                </button>
+                <figcaption><b>Match a script</b> — paste, upload or link a script; get back what the studio already owns.</figcaption>
+              </figure>
+              <figure>
+                <button class="shot" data-full="assets/shots/asset-page.webp" aria-label="Enlarge screenshot: asset page">
+                  <img src="assets/shots/asset-page.webp" alt="Asset detail page showing formats, texture count, file count and download size" loading="lazy" width="1600" height="1000">
+                </button>
+                <figcaption><b>Asset page</b> — formats, textures and size measured from the actual download.</figcaption>
+              </figure>
+              <figure>
+                <button class="shot" data-full="assets/shots/admin.webp" aria-label="Enlarge screenshot: admin dashboard">
+                  <img src="assets/shots/admin.webp" alt="Admin dashboard with library health bars and daily usage charts" loading="lazy" width="1600" height="1000">
+                </button>
+                <figcaption><b>Admin</b> — library health, access requests, recommended purchases, daily usage.</figcaption>
+              </figure>
+            </div>
+
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span><span class="tech-tag">TypeScript</span><span class="tech-tag">Prisma</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Supabase</span><span class="tech-tag">Cloudflare R2</span><span class="tech-tag">Gemini API</span><span class="tech-tag">Python</span><span class="tech-tag">bpy</span><span class="tech-tag">Vercel</span>
+            </div>
+            <div class="project-date">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+              2026 – Present
             </div>
           </div>
+          <div class="project-glow"></div>
+        </article>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div class="project-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8"/></svg>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Akashkandari7/Sem6_Miniproject" target="_blank" rel="noopener" class="project-link" aria-label="QPGen source on GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                  </a>
+                  <a href="https://sem6-miniproject.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="QPGen live site">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">QPGen — AI Question Paper Generator</h3>
+              <p class="project-description">
+                Question-paper generator for teachers. Builds questions by Bloom's Taxonomy level and difficulty using
+                the Gemini API, with JWT authentication and a Supabase (PostgreSQL) database.
+              </p>
+              <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Gemini API</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">JWT</span></div>
+              <div class="project-date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2026</div>
+            </div>
+            <div class="project-glow"></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div class="project-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </div>
+                <div class="project-links">
+                  <a href="https://github.com/Akashkandari7/Lead-generation" target="_blank" rel="noopener" class="project-link" aria-label="Lead Generation Agent source on GitHub">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Autonomous Lead Generation Agent</h3>
+              <p class="project-description">
+                Desktop agent that searches Google Maps by keyword and location, finds local businesses that have a
+                phone number but no website, and exports a styled Excel report. Runs locally, no API keys.
+              </p>
+              <div class="project-tech"><span class="tech-tag">Python</span><span class="tech-tag">Playwright</span><span class="tech-tag">Streamlit</span><span class="tech-tag">pandas</span></div>
+              <div class="project-date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2026</div>
+            </div>
+            <div class="project-glow"></div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card-inner">
+              <div class="project-header">
+                <div class="project-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+                </div>
+                <div class="project-links">
+                  <a href="https://halebaked.vercel.app" target="_blank" rel="noopener" class="project-link" aria-label="Halebaked live site">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3 class="project-title">Halebaked — E-commerce App</h3>
+              <p class="project-description">
+                Full-stack e-commerce app with a component-based architecture, multi-language support and a
+                responsive layout that works on desktop and mobile.
+              </p>
+              <div class="project-tech"><span class="tech-tag">Next.js</span><span class="tech-tag">Tailwind CSS</span><span class="tech-tag">MongoDB</span></div>
+              <div class="project-date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>2026</div>
+            </div>
+            <div class="project-glow"></div>
+          </article>
         </div>
-
-        <div class="gallery">
-          <figure>
-            <button class="shot" data-full="assets/shots/catalog.webp" aria-label="Enlarge: catalog">
-              <img src="assets/shots/catalog.webp" alt="Dragon Pit catalog: a grid of 3D character models with category filters" loading="lazy" width="1600" height="1000">
-            </button>
-            <figcaption><b>Catalog.</b> Filter by registry, rig status, file type and source.</figcaption>
-          </figure>
-          <figure>
-            <button class="shot" data-full="assets/shots/script-matching.webp" aria-label="Enlarge: script matching">
-              <img src="assets/shots/script-matching.webp" alt="Match a Script page with a text box for pasting a script" loading="lazy" width="1600" height="1000">
-            </button>
-            <figcaption><b>Match a script.</b> Paste, upload or link a script; get back the assets the studio already owns.</figcaption>
-          </figure>
-          <figure>
-            <button class="shot" data-full="assets/shots/asset-page.webp" aria-label="Enlarge: asset page">
-              <img src="assets/shots/asset-page.webp" alt="Asset detail page showing formats, texture count, file count and download size" loading="lazy" width="1600" height="1000">
-            </button>
-            <figcaption><b>Asset page.</b> Formats, textures and size measured from the file you actually download.</figcaption>
-          </figure>
-          <figure>
-            <button class="shot" data-full="assets/shots/admin.webp" aria-label="Enlarge: admin dashboard">
-              <img src="assets/shots/admin.webp" alt="Admin dashboard with library health bars and daily usage charts" loading="lazy" width="1600" height="1000">
-            </button>
-            <figcaption><b>Admin.</b> Library health, access requests, recommended purchases, daily usage.</figcaption>
-          </figure>
-        </div>
-      </article>
-
-      <div class="projects-grid">
-        <article class="card reveal">
-          <div class="card-top">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h8"/></svg>
-            </span>
-            <div class="card-links">
-              <a href="https://github.com/Akashkandari7/Sem6_Miniproject" target="_blank" rel="noopener" aria-label="QPGen source on GitHub">Code</a>
-              <a href="https://sem6-miniproject.vercel.app" target="_blank" rel="noopener" aria-label="QPGen live site">Live ↗</a>
-            </div>
-          </div>
-          <h3>QPGen</h3>
-          <p>AI question-paper generator for teachers. Builds questions by Bloom's Taxonomy level and difficulty, with JWT auth and a Supabase database.</p>
-          <div class="tech"><span>Python</span><span>Flask</span><span>Gemini API</span><span>PostgreSQL</span><span>JWT</span></div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-top">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-            </span>
-            <div class="card-links">
-              <a href="https://github.com/Akashkandari7/Lead-generation" target="_blank" rel="noopener" aria-label="Lead Generation Agent source on GitHub">Code</a>
-            </div>
-          </div>
-          <h3>Lead Generation Agent</h3>
-          <p>Desktop agent that finds local businesses with a phone number but no website, and exports a styled Excel report. Runs locally, no API keys.</p>
-          <div class="tech"><span>Python</span><span>Playwright</span><span>Streamlit</span><span>pandas</span></div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-top">
-            <span class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
-            </span>
-            <div class="card-links">
-              <a href="https://halebaked.vercel.app" target="_blank" rel="noopener" aria-label="Halebaked live site">Live ↗</a>
-            </div>
-          </div>
-          <h3>Halebaked</h3>
-          <p>Full-stack e-commerce app with a component-based architecture, multi-language support and a responsive layout.</p>
-          <div class="tech"><span>Next.js</span><span>Tailwind CSS</span><span>MongoDB</span></div>
-        </article>
       </div>
     </section>
 
-    <!-- Terminal -->
+    <!-- Interactive terminal -->
     <section class="section" id="terminal">
-      <header class="section-head reveal">
-        <span class="tag">// explore with commands</span>
-        <h2>Interactive <span class="grad">terminal</span></h2>
-        <p class="section-sub">Type <code>help</code> to see what it knows.</p>
-      </header>
-      <div class="window term reveal">
-        <div class="window-bar"><i></i><i></i><i></i><span>visitor@akash: ~</span></div>
-        <div class="term-out" id="termOut" aria-live="polite"></div>
-        <form class="term-in" id="termForm" autocomplete="off">
-          <label for="termInput" class="prompt">visitor@akash:~$</label>
-          <input id="termInput" type="text" spellcheck="false" autocapitalize="off" placeholder="try: dragonpit">
-        </form>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// explore with commands</span>
+          <h2 class="section-title">Interactive <span class="gradient-text">Terminal</span></h2>
+          <p class="section-subtitle">Type <code>help</code> to see all available commands</p>
+        </div>
+        <div class="live-terminal reveal" id="liveTerminal">
+          <div class="live-terminal-header">
+            <div class="window-dots"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+            <span class="live-terminal-title">akash@portfolio:~</span>
+            <span class="terminal-status"><span class="status-dot"></span>Interactive</span>
+          </div>
+          <div class="live-terminal-body" id="terminalBody" aria-live="polite">
+            <div class="terminal-welcome">
+<pre class="ascii-art">    _    _  __    _    ____  _   _
+   / \  | |/ /   / \  / ___|| | | |
+  / _ \ | ' /   / _ \ \___ \| |_| |
+ / ___ \| . \  / ___ \ ___) |  _  |
+/_/   \_\_|\_\/_/   \_\____/|_| |_|</pre>
+              <p class="welcome-text">Welcome to Akash's interactive portfolio terminal!</p>
+              <p class="welcome-hint">Type <span class="cmd-hl">help</span> to see available commands, or try <span class="cmd-hl">dragonpit</span>.</p>
+            </div>
+          </div>
+          <form class="live-terminal-input" id="terminalForm" autocomplete="off">
+            <label for="terminalInput" class="input-prompt">visitor@portfolio:~$</label>
+            <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command..." spellcheck="false" autocapitalize="off">
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- Contact -->
     <section class="section" id="contact">
-      <header class="section-head reveal">
-        <span class="tag">// let's talk</span>
-        <h2>Get in <span class="grad">touch</span></h2>
-        <p class="section-sub">Hiring, a project, or a question about Dragon Pit — email is fastest.</p>
-      </header>
-      <div class="contact-grid">
-        <a class="contact reveal" href="mailto:akashkandari7@gmail.com">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">akashkandari7@gmail.com</span>
-        </a>
-        <a class="contact reveal" href="https://linkedin.com/in/akashkandari7" target="_blank" rel="noopener">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">in/akashkandari7</span>
-        </a>
-        <a class="contact reveal" href="https://github.com/Akashkandari7" target="_blank" rel="noopener">
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">@Akashkandari7</span>
-        </a>
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag">// let's connect</span>
+          <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+          <p class="section-subtitle">Hiring, a project in mind, or a question about Dragon Pit? Feel free to reach out!</p>
+        </div>
+        <div class="contact-grid stagger">
+          <a href="https://github.com/Akashkandari7" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg></div>
+            <h3 class="contact-title">GitHub</h3>
+            <p class="contact-value">@Akashkandari7</p>
+          </a>
+          <a href="https://linkedin.com/in/akashkandari7" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></div>
+            <h3 class="contact-title">LinkedIn</h3>
+            <p class="contact-value">@akashkandari7</p>
+          </a>
+          <a href="mailto:akashkandari7@gmail.com" class="contact-card">
+            <div class="contact-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+            <h3 class="contact-title">Email</h3>
+            <p class="contact-value">akashkandari7@gmail.com</p>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p><span class="accent">&lt;</span> Designed &amp; built by Akash Kandari <span class="accent">/&gt;</span></p>
-    <p class="muted">© <span id="year">2026</span></p>
+    <p class="footer-text"><span class="bracket">&lt;</span> Designed &amp; Built by <span class="gradient-text">Akash Kandari</span> <span class="bracket">/&gt;</span></p>
+    <p class="footer-year">© <span id="year">2026</span> All rights reserved.</p>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 15 6-6 6 6"/></svg>
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
   </button>
 
   <div class="lightbox" id="lightbox" hidden>
